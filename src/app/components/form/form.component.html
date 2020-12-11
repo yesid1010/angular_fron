@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label >nombres</label>
+            <input type="text" class="form-control" [(ngModel)]="persona.nombres">
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label >Apellidos</label>
+            <input type="text" class="form-control" [(ngModel)]="persona.apellidos">
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label >Correo</label>
+            <input type="text" class="form-control" [(ngModel)]="persona.correo">
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="form-group">
+            <label >Telefono</label>
+            <input type="number" class="form-control" [(ngModel)]="persona.telefono">
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label >Direccion</label>
+            <input type="text" class="form-control" [(ngModel)]="persona.direccion">
+          </div>
+    </div>
+</div>
+
+<div class="row">
+    <button *ngIf="!modoEditar" type="button" (click)="addPersona()" class="btn ml-3 mr-2 btn-primary">Agregar</button>
+    <button *ngIf="modoEditar" type="button" (click)="update()" class="btn px-2 btn-primary">Actualizar</button>
+    <button  type="button" (click)="clear()" class="btn btn-danger px-2">Cancelar</button>
+</div>

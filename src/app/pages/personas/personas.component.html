@@ -1,0 +1,69 @@
+<div class="container mt-4">
+    <h3 class="text-center">Personas</h3>
+            <!-- <app-form></app-form> -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >nombres</label>
+                    <input type="text" class="form-control" [(ngModel)]="persona.nombres">
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >Apellidos</label>
+                    <input type="text" class="form-control" [(ngModel)]="persona.apellidos">
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >Correo</label>
+                    <input type="text" class="form-control" [(ngModel)]="persona.correo">
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >Telefono</label>
+                    <input type="number" class="form-control" [(ngModel)]="persona.telefono">
+                  </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label >Direccion</label>
+                    <input type="text" class="form-control" [(ngModel)]="persona.direccion">
+                  </div>
+            </div>
+        </div>
+
+    <div class="row">
+        <button *ngIf="!modoEditar" type="button" (click)="addPersona()" class="btn ml-3 mr-2 btn-primary">Agregar</button>
+        <button *ngIf="modoEditar" type="button" (click)="update()" class="btn mr-2 ml-3 btn-primary">Actualizar</button>
+        <button  type="button" (click)="clear()" class="btn btn-danger px-2">Cancelar</button>
+    </div>
+    <table class="table mt-5">
+        <thead class="bg-primary">
+            <tr>
+                <th>nombres</th>
+                <th>apellidos</th>
+                <th>correo</th>
+                <th>telefono</th>
+                <th>direccion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of personas">
+                <td>{{persona.nombres}}</td>
+                <td>{{persona.apellidos}}</td>
+                <td>{{persona.correo}}</td>
+                <td>{{persona.telefono}}</td>
+                <td>{{persona.direccion}}</td>
+                <th>
+                    <button type="button" (click)="edit(persona)" class="btn mr-2 btn-primary">Editar</button>
+                    <button type="button" (click)="deletePerson(persona.id)" class="btn btn-danger">Eliminar</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
